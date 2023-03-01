@@ -8,6 +8,6 @@ interface TestPageArgs {
 
 export default class TestPageComponent extends Component<TestPageArgs> {
   get result(): number {
-    return sumArgs({ ...this.args, f: 3 });
+    return sumArgs({ ...this.args, c: 3 });
   }
 }
