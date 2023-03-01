@@ -1,0 +1,39 @@
+{
+  "extends": "@tsconfig/ember/tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "outDir": "./dist",
+    // The combination of `baseUrl` with `paths` allows Ember's classic package
+    // layout, which is not resolvable with the Node resolution algorithm, to
+    // work with TypeScript.
+    "baseUrl": ".",
+    "paths": {
+      // Packages
+      "tac": [
+        "packages/tac/addon"
+      ],
+      "tac/*": [
+        "packages/tac/addon/*"
+      ],
+      "tac/test-support": [
+        "packages/tac/addon-test-support"
+      ],
+      "tac/test-support/*": [
+        "packages/tac/addon-test-support/*"
+      ],
+      // Apps
+      "one/tests/*": [
+        "apps/one/tests/*"
+      ],
+      "one/*": [
+        "apps/one/app/*"
+      ],
+      // General
+      "*": [
+        "types/*"
+      ]
+    }
+  }
+}

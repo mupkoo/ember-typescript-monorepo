@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { sumArgs } from 'tac/util';
 
 interface TestPageArgs {
   a: number;
@@ -7,6 +8,6 @@ interface TestPageArgs {
 
 export default class TestPageComponent extends Component<TestPageArgs> {
   get result(): number {
-    return this.args.a + this.args.b;
+    return sumArgs({ ...this.args, f: 3 });
   }
 }
